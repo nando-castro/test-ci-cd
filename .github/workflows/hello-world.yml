@@ -1,0 +1,11 @@
+name: Github Action Hello World
+on: [push]
+jobs:
+  Hello-World:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Olá turma 6 xablau!!!!!"
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+      - name: List files
+        run: ls ${{ github.workspace }}
