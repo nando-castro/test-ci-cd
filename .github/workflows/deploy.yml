@@ -1,4 +1,4 @@
-name: Deploy on Heroku
+name: Deploy no Heroku
 on:
   push:
     branches:
@@ -7,12 +7,12 @@ jobs:
   HerokuDeploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Chekout repository
+      - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Deploy app on heroku
-        uses: akhileshns/heroku-deploy@v3.12.12
+			- name: Deploy app on heroku
+	      uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
-          branch: 'main'
+          branch: "main"
